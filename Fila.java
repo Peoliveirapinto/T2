@@ -34,6 +34,18 @@ public class Fila {
         ocupacao--;
         return temp;
     }
+    public void consulta(String nomeArquivo) {
+        if (filaVazia()) throw new RuntimeException("fila vazia");
+        for (int i = primeiro, cont = 1; cont <= ocupacao; cont++) {
+            if (dados[i].getNomeArquivo().equals(nomeArquivo)) {
+                System.out.println("Documento foi encontrado, ele está na posição " + cont + " da fila e foi solicidado às " + dados[i].horarioImpressao);
+                return;
+            }
+            i = proxima(i);
+        }
+        throw new RuntimeException("Documento não encontrado");
+
+    }
     @Override
     public String toString () {
         if (filaVazia()) return "fila vazia";
