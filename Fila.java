@@ -32,6 +32,8 @@ public class Fila {
         Documento temp = dados[primeiro];
         primeiro = proxima(primeiro);
         temp.setHorarioImpressao();
+        long tempoImpressao = temp.getHorarioImpressao() - temp.getHorarioSolicitacao();
+        System.out.println("Imprimindo documento: " + temp.getNomeArquivo() + " demorou " + tempoImpressao + " milisegundos");
         ocupacao--;
         return temp;
     }
