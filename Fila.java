@@ -30,6 +30,7 @@ public class Fila {
         if (filaVazia()) throw new RuntimeException("falha no desenfileiramento");
         Documento temp = dados[primeiro];
         primeiro = proxima(primeiro);
+        temp.setHorarioImpressao();
         ocupacao--;
         return temp;
     }
@@ -38,35 +39,8 @@ public class Fila {
         if (filaVazia()) return "fila vazia";
         String s = "";
         for (int i=primeiro, cont=0; cont < ocupacao; cont++) {
-            s += dados[i] + " ";
+            s += dados[i] + "\n";
             i = proxima(i);
-        }
-        return s;
-    }
-    public String stringVetor() {
-        String s="";
-        int i;
-        if (filaVazia())
-            for (i=0; i<dados.length; i++)
-                s += "_ ";
-        else if (filaCheia())
-            for(i=0; i<dados.length; i++)
-                s += dados[i] + " ";
-        else if (primeiro < ultimo) {
-            for (i=0; i < primeiro; i++)
-                s += "_ ";
-            for (i=primeiro; i<ultimo; i++)
-                s += dados[i] + " ";
-            for (i=ultimo; i<dados.length; i++)
-                s += "_ ";
-        }
-        else {
-            for (i=0; i < ultimo; i++)
-                s += dados[i] + " ";
-            for (i=ultimo; i<primeiro; i++)
-                s += "_ ";
-            for (i=primeiro; i<dados.length; i++)
-                s += dados[i] + " ";
         }
         return s;
     }
