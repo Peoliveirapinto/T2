@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class Documento {
     String nomeArquivo;
     String nomeUsuario;
@@ -17,7 +19,7 @@ public class Documento {
     public long getHorarioSolicitacao() {
         return horarioSolicitacao;
     }
-    public void setHorarioSolicitacao(long horarioSolicitacao) {
-        this.horarioSolicitacao = horarioSolicitacao;
+    public void setHorarioSolicitacao() {
+        this.horarioSolicitacao = new Date().getTime();
     }
 }
