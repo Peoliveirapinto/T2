@@ -41,7 +41,7 @@ public class Fila {
         if (filaVazia()) throw new RuntimeException("fila vazia");
         for (int i = primeiro, cont = 1; cont <= ocupacao; cont++) {
             if (dados[i].getNomeArquivo().equals(nomeArquivo)) {
-                System.out.println("Documento foi encontrado, ele está na posição " + cont + " da fila e foi solicidado às " + dados[i].horarioImpressao);
+                System.out.println("Documento foi encontrado, ele está na posição " + cont + " da fila e foi solicidado às " + dados[i].getHorarioSolicitacao());
                 return;
             }
             i = proxima(i);
