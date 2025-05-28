@@ -6,6 +6,15 @@ public class Documento {
     long horarioSolicitacao;
     long horarioImpressao;
     long horarioReimpressao;
+    
+    public Documento(String nomeArquivo, String nomeUsuario) {
+        this.nomeArquivo = nomeArquivo;
+        this.nomeUsuario = nomeUsuario;
+        this.horarioSolicitacao = 0;
+        this.horarioImpressao = 0;
+        this.horarioReimpressao = 0;
+    }
+
     public String getNomeArquivo() {
         return nomeArquivo;
     }
