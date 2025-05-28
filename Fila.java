@@ -20,14 +20,14 @@ public class Fila {
     private int proxima (int pos) {
         return (pos + 1) % dados.length;
     }
-    public void enfileira (Documento e) {
+    public void solicita (Documento e) {
         if (filaCheia()) throw new RuntimeException("falha no enfileiramento");
         e.setHorarioSolicitacao();
         dados[ultimo] = e;
         ultimo = proxima(ultimo);
         ocupacao++;
     }
-    public Documento desenfileira () {
+    public Documento imprime() {
         if (filaVazia()) throw new RuntimeException("falha no desenfileiramento");
         Documento temp = dados[primeiro];
         primeiro = proxima(primeiro);
