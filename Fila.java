@@ -22,6 +22,7 @@ public class Fila {
     }
     public void enfileira (Documento e) {
         if (filaCheia()) throw new RuntimeException("falha no enfileiramento");
+        e.setHorarioSolicitacao();
         dados[ultimo] = e;
         ultimo = proxima(ultimo);
         ocupacao++;
