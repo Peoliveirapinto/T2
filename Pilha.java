@@ -36,7 +36,7 @@ public class Pilha {
         if (pilhaVazia()) throw new RuntimeException("falha no desenfileiramento");
         Documento temp = dados[ultimo];
         ultimo = anterior(ultimo);
-        temp.setHorarioImpressao();
+        temp.setHorarioReimpressao();
         long tempoReimpressao = temp.getHorarioReimpressao() - temp.getHorarioSolicitacao();
         System.out.println("Reimprimindo documento: " + temp.getNomeArquivo() + " demorou " + tempoReimpressao + " milisegundos");
         ocupacao--;
